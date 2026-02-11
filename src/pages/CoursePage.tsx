@@ -377,7 +377,7 @@ const CoursePage = () => {
                                   ? 'bg-green-50 border-green-200'
                                   : 'bg-white border-slate-200 hover:border-slate-300'
                               }`}
-                              onClick={() => toggleLessonComplete(lesson.id)}
+                              onClick={() => navigate(`/lesson?courseId=${courseId}&lessonId=${lesson.id}`)}
                             >
                               <div className="flex items-center space-x-3 flex-1">
                                 <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
