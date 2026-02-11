@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -7,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('courses');
 
   const courses = [
@@ -425,6 +427,7 @@ const Index = () => {
                       )}
                       <Button
                         className={`w-full bg-gradient-to-r ${course.color} hover:opacity-90 transition-opacity`}
+                        onClick={() => navigate(`/course?id=${course.id}`)}
                       >
                         {course.progress === 0 ? 'Начать курс' : course.progress === 100 ? 'Пройти тест' : 'Продолжить'}
                       </Button>
