@@ -28,8 +28,8 @@ const CoursePage = () => {
           title: 'Введение в рекрутмент',
           duration: '45 мин',
           lessons: [
-            { id: '1-1', title: 'Роль рекрутера в компании', duration: '15 мин', type: 'video' },
-            { id: '1-2', title: 'Процесс подбора: этапы и воронка', duration: '20 мин', type: 'video' },
+            { id: '1-1', title: 'Роль рекрутера в компании', duration: '15 мин', type: 'article' },
+            { id: '1-2', title: 'Процесс подбора: этапы и воронка', duration: '20 мин', type: 'article' },
             { id: '1-3', title: 'Метрики эффективности рекрутмента', duration: '10 мин', type: 'article' },
           ]
         },
@@ -38,7 +38,7 @@ const CoursePage = () => {
           title: 'Составление вакансии',
           duration: '60 мин',
           lessons: [
-            { id: '2-1', title: 'Интервью с заказчиком', duration: '20 мин', type: 'video' },
+            { id: '2-1', title: 'Интервью с заказчиком', duration: '20 мин', type: 'article' },
             { id: '2-2', title: 'Job description: структура и элементы', duration: '15 мин', type: 'article' },
             { id: '2-3', title: 'Практика: создание вакансии', duration: '25 мин', type: 'task' },
           ]
@@ -48,8 +48,8 @@ const CoursePage = () => {
           title: 'Поиск кандидатов',
           duration: '90 мин',
           lessons: [
-            { id: '3-1', title: 'Каналы поиска: обзор', duration: '25 мин', type: 'video' },
-            { id: '3-2', title: 'Работа с Job-сайтами', duration: '30 мин', type: 'video' },
+            { id: '3-1', title: 'Каналы поиска: обзор', duration: '25 мин', type: 'article' },
+            { id: '3-2', title: 'Работа с Job-сайтами', duration: '30 мин', type: 'article' },
             { id: '3-3', title: 'Boolean-поиск в LinkedIn', duration: '20 мин', type: 'article' },
             { id: '3-4', title: 'Практика: поиск по вакансии', duration: '15 мин', type: 'task' },
           ]
@@ -59,8 +59,8 @@ const CoursePage = () => {
           title: 'Первичный контакт с кандидатом',
           duration: '50 мин',
           lessons: [
-            { id: '4-1', title: 'Холодные сообщения: что работает', duration: '20 мин', type: 'video' },
-            { id: '4-2', title: 'Телефонный скрининг', duration: '20 мин', type: 'video' },
+            { id: '4-1', title: 'Холодные сообщения: что работает', duration: '20 мин', type: 'article' },
+            { id: '4-2', title: 'Телефонный скрининг', duration: '20 мин', type: 'article' },
             { id: '4-3', title: 'Симуляция: первый звонок', duration: '10 мин', type: 'simulation' },
           ]
         },
@@ -80,8 +80,8 @@ const CoursePage = () => {
           title: 'Типы собеседований',
           duration: '40 мин',
           lessons: [
-            { id: '1-1', title: 'Структурированное vs неструктурированное', duration: '15 мин', type: 'video' },
-            { id: '1-2', title: 'Поведенческие интервью (STAR)', duration: '15 мин', type: 'video' },
+            { id: '1-1', title: 'Структурированное vs неструктурированное', duration: '15 мин', type: 'article' },
+            { id: '1-2', title: 'Поведенческие интервью (STAR)', duration: '15 мин', type: 'article' },
             { id: '1-3', title: 'Кейсовые интервью', duration: '10 мин', type: 'article' },
           ]
         },
@@ -90,7 +90,7 @@ const CoursePage = () => {
           title: 'Подготовка к интервью',
           duration: '55 мин',
           lessons: [
-            { id: '2-1', title: 'Анализ резюме кандидата', duration: '20 мин', type: 'video' },
+            { id: '2-1', title: 'Анализ резюме кандидата', duration: '20 мин', type: 'article' },
             { id: '2-2', title: 'Составление плана интервью', duration: '15 мин', type: 'article' },
             { id: '2-3', title: 'Практика: чек-лист подготовки', duration: '20 мин', type: 'task' },
           ]
@@ -100,8 +100,8 @@ const CoursePage = () => {
           title: 'Проведение интервью',
           duration: '70 мин',
           lessons: [
-            { id: '3-1', title: 'Создание доверительной атмосферы', duration: '15 мин', type: 'video' },
-            { id: '3-2', title: 'Техника активного слушания', duration: '20 мин', type: 'video' },
+            { id: '3-1', title: 'Создание доверительной атмосферы', duration: '15 мин', type: 'article' },
+            { id: '3-2', title: 'Техника активного слушания', duration: '20 мин', type: 'article' },
             { id: '3-3', title: 'Открытые и закрытые вопросы', duration: '15 мин', type: 'article' },
             { id: '3-4', title: 'Симуляция: проведение интервью', duration: '20 мин', type: 'simulation' },
           ]
@@ -128,7 +128,6 @@ const CoursePage = () => {
 
   const getLessonIcon = (type: string) => {
     switch (type) {
-      case 'video': return 'Video';
       case 'article': return 'FileText';
       case 'task': return 'CheckSquare';
       case 'simulation': return 'Play';
@@ -138,7 +137,6 @@ const CoursePage = () => {
 
   const getLessonTypeLabel = (type: string) => {
     switch (type) {
-      case 'video': return 'Видео';
       case 'article': return 'Статья';
       case 'task': return 'Задание';
       case 'simulation': return 'Симуляция';
@@ -335,7 +333,7 @@ const CoursePage = () => {
 
                   <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
                     <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
-                      <Icon name="Video" className="text-white" size={20} />
+                      <Icon name="FileText" className="text-white" size={20} />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">Уроков</div>
