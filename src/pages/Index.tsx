@@ -53,6 +53,94 @@ const Index = () => {
       level: 'Средний',
       color: 'from-green-500 to-green-700',
       icon: 'BarChart3'
+    },
+    {
+      id: 5,
+      title: 'Работа с HR-системами',
+      description: 'ATS, CRM и автоматизация процессов рекрутмента',
+      progress: 20,
+      modules: 9,
+      duration: '5 недель',
+      level: 'Средний',
+      color: 'from-indigo-500 to-indigo-700',
+      icon: 'Laptop'
+    },
+    {
+      id: 6,
+      title: 'Employer Branding',
+      description: 'Построение бренда работодателя и продвижение вакансий',
+      progress: 0,
+      modules: 7,
+      duration: '4 недели',
+      level: 'Продвинутый',
+      color: 'from-pink-500 to-pink-700',
+      icon: 'Sparkles'
+    },
+    {
+      id: 7,
+      title: 'Массовый подбор',
+      description: 'Стратегии закрытия большого количества вакансий',
+      progress: 0,
+      modules: 8,
+      duration: '5 недель',
+      level: 'Средний',
+      color: 'from-cyan-500 to-cyan-700',
+      icon: 'UserPlus'
+    },
+    {
+      id: 8,
+      title: 'IT-рекрутмент',
+      description: 'Особенности подбора технических специалистов',
+      progress: 0,
+      modules: 11,
+      duration: '7 недель',
+      level: 'Продвинутый',
+      color: 'from-emerald-500 to-emerald-700',
+      icon: 'Code'
+    },
+    {
+      id: 9,
+      title: 'Трудовое законодательство РФ',
+      description: 'Правовые основы работы с персоналом',
+      progress: 0,
+      modules: 10,
+      duration: '6 недель',
+      level: 'Начальный',
+      color: 'from-amber-500 to-amber-700',
+      icon: 'Scale'
+    },
+    {
+      id: 10,
+      title: 'Адаптация персонала',
+      description: 'Онбординг и интеграция новых сотрудников',
+      progress: 0,
+      modules: 6,
+      duration: '4 недели',
+      level: 'Начальный',
+      color: 'from-rose-500 to-rose-700',
+      icon: 'HeartHandshake'
+    },
+    {
+      id: 11,
+      title: 'Развитие и мотивация персонала',
+      description: 'Системы оценки, грейдинг и управление талантами',
+      progress: 0,
+      modules: 9,
+      duration: '6 недель',
+      level: 'Средний',
+      color: 'from-violet-500 to-violet-700',
+      icon: 'TrendingUp'
+    },
+    {
+      id: 12,
+      title: 'Удаленный найм',
+      description: 'Особенности подбора и управления распределенными командами',
+      progress: 0,
+      modules: 7,
+      duration: '4 недели',
+      level: 'Средний',
+      color: 'from-teal-500 to-teal-700',
+      icon: 'Globe'
     }
   ];
 
@@ -63,7 +151,8 @@ const Index = () => {
       description: 'Кандидат отказывается от оффера. Ваши действия?',
       difficulty: 'Средняя',
       timeLimit: '15 мин',
-      icon: 'UserX'
+      icon: 'UserX',
+      category: 'Работа с кандидатами'
     },
     {
       id: 2,
@@ -71,7 +160,8 @@ const Index = () => {
       description: 'Руководитель недоволен предложенными кандидатами',
       difficulty: 'Высокая',
       timeLimit: '20 мин',
-      icon: 'AlertTriangle'
+      icon: 'AlertTriangle',
+      category: 'Взаимодействие с заказчиками'
     },
     {
       id: 3,
@@ -79,7 +169,89 @@ const Index = () => {
       description: 'Нужно закрыть позицию за 3 дня. План действий?',
       difficulty: 'Высокая',
       timeLimit: '25 мин',
-      icon: 'Clock'
+      icon: 'Clock',
+      category: 'Тайм-менеджмент'
+    },
+    {
+      id: 4,
+      title: 'Кандидат завышает ожидания по ЗП',
+      description: 'Идеальный кандидат, но его запрос на 40% выше бюджета',
+      difficulty: 'Средняя',
+      timeLimit: '15 мин',
+      icon: 'DollarSign',
+      category: 'Переговоры'
+    },
+    {
+      id: 5,
+      title: 'Негативный отзыв на работных сайтах',
+      description: 'Кандидат прочитал плохие отзывы о компании и сомневается',
+      difficulty: 'Средняя',
+      timeLimit: '15 мин',
+      icon: 'MessageCircle',
+      category: 'Работа с возражениями'
+    },
+    {
+      id: 6,
+      title: 'Массовое увольнение в отделе',
+      description: 'Нужно срочно закрыть 10 позиций после ухода команды',
+      difficulty: 'Высокая',
+      timeLimit: '30 мин',
+      icon: 'Users',
+      category: 'Кризисное управление'
+    },
+    {
+      id: 7,
+      title: 'Кандидат не выходит на связь',
+      description: 'После успешного интервью кандидат пропал. Что делать?',
+      difficulty: 'Низкая',
+      timeLimit: '10 мин',
+      icon: 'PhoneOff',
+      category: 'Работа с кандидатами'
+    },
+    {
+      id: 8,
+      title: 'Дискриминационный запрос заказчика',
+      description: 'Руководитель просит подобрать только мужчин до 35 лет',
+      difficulty: 'Высокая',
+      timeLimit: '20 мин',
+      icon: 'Shield',
+      category: 'Этика и законодательство'
+    },
+    {
+      id: 9,
+      title: 'Переманивание от конкурента',
+      description: 'Ваш лучший кандидат получил оффер от прямого конкурента',
+      difficulty: 'Высокая',
+      timeLimit: '20 мин',
+      icon: 'Target',
+      category: 'Удержание талантов'
+    },
+    {
+      id: 10,
+      title: 'Неадекватные требования к позиции',
+      description: 'Заказчик хочет Senior специалиста за Junior зарплату',
+      difficulty: 'Средняя',
+      timeLimit: '15 мин',
+      icon: 'TrendingDown',
+      category: 'Консультирование заказчиков'
+    },
+    {
+      id: 11,
+      title: 'Фейковое резюме',
+      description: 'Вы заподозрили кандидата в искажении опыта работы',
+      difficulty: 'Средняя',
+      timeLimit: '15 мин',
+      icon: 'FileWarning',
+      category: 'Проверка информации'
+    },
+    {
+      id: 12,
+      title: 'Токсичный сотрудник на испытательном',
+      description: 'Новый сотрудник конфликтует с командой в первую неделю',
+      difficulty: 'Высокая',
+      timeLimit: '25 мин',
+      icon: 'Flame',
+      category: 'Адаптация и онбординг'
     }
   ];
 
