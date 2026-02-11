@@ -37,7 +37,33 @@ const LessonPage = () => {
   const [searchParams] = useSearchParams();
   const courseId = searchParams.get('courseId') || '1';
   const lessonId = searchParams.get('lessonId') || '1-1';
-  const [isCompleted, setIsCompleted] = useState(false);
+  
+  const [isCompleted, setIsCompleted] = useState(() => {
+    const saved = localStorage.getItem(`course-${courseId}-completed`);
+    const completedLessons = saved ? JSON.parse(saved) : [];
+    return completedLessons.includes(lessonId);
+  });
+
+  useEffect(() => {
+    const saved = localStorage.getItem(`course-${courseId}-completed`);
+    const completedLessons = saved ? JSON.parse(saved) : [];
+    setIsCompleted(completedLessons.includes(lessonId));
+  }, [lessonId, courseId]);
+
+  const toggleCompletion = () => {
+    const saved = localStorage.getItem(`course-${courseId}-completed`);
+    const completedLessons = saved ? JSON.parse(saved) : [];
+    
+    if (completedLessons.includes(lessonId)) {
+      const updated = completedLessons.filter((id: string) => id !== lessonId);
+      localStorage.setItem(`course-${courseId}-completed`, JSON.stringify(updated));
+      setIsCompleted(false);
+    } else {
+      const updated = [...completedLessons, lessonId];
+      localStorage.setItem(`course-${courseId}-completed`, JSON.stringify(updated));
+      setIsCompleted(true);
+    }
+  };
 
   const courses: Record<string, Course> = {
     '1': {
@@ -199,7 +225,7 @@ const LessonPage = () => {
               <Button
                 variant={isCompleted ? "secondary" : "default"}
                 size="lg"
-                onClick={() => setIsCompleted(!isCompleted)}
+                onClick={toggleCompletion}
                 className={isCompleted ? "bg-green-500 hover:bg-green-600 text-white" : ""}
               >
                 {isCompleted ? (

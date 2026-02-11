@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,7 +37,15 @@ const CoursePage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const courseId = searchParams.get('id') || '1';
-  const [completedLessons, setCompletedLessons] = useState<string[]>(['1-1', '1-2']);
+  
+  const [completedLessons, setCompletedLessons] = useState<string[]>(() => {
+    const saved = localStorage.getItem(`course-${courseId}-completed`);
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(`course-${courseId}-completed`, JSON.stringify(completedLessons));
+  }, [completedLessons, courseId]);
 
   const courses: Record<string, Course> = {
     '1': {
